@@ -11,7 +11,7 @@ import { DataService, DataItem } from '../../shared/data.service'
 })
 export class ItemDetailComponent implements OnInit {
   item: DataItem;
-  textInput: string = '679';
+  textInput: string = '679'; // added to test to see if two way binding works
 
   constructor(
     private _data: DataService,
@@ -25,13 +25,14 @@ export class ItemDetailComponent implements OnInit {
     this.item = this._data.getItem(id)
   }
 
-  
+  // this function gets called twice.  First time, the value is the latest input.  Second call, the last text input character is missing, unless backspace is pressed  
   tester(event) {
     console.log('event.value', event.value);
     this.textInput = event.value;
     console.log('after', this.textInput)
   }
 
+  // test button
   test() {
     console.log('textInput:', this.textInput);
   }

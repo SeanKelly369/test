@@ -1,10 +1,33 @@
 <ActionBar>
-  <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+  <NavigationButton
+    (tap)="onBackTap()"
+    android.systemIcon="ic_menu_back"
+  ></NavigationButton>
   <Label [text]="item.name"></Label>
 </ActionBar>
 
 <GridLayout rows="*,*,*">
-  <Label row="0" class="m-10 h3" verticalAlignment="top" [text]="item.description"></Label>
-  <TextField row="1" [text]="textInput" (textChange)="tester($event)" height="60" width="120" backgroundColor="green"></TextField>
-  <Button row="2" text="Test" (tap)="test()" backgroundColor="orange" height="60" width="100"></Button>
+  <Label
+    row="0"
+    class="m-10 h3"
+    verticalAlignment="top"
+    [text]="item.description"
+  ></Label>
+  <!-- Tried [(ngMogule)], but experienced problems.  Here nothing would change and in a production app, the same error described in item-detail.component.ts occurs. -->
+  <TextField
+    row="1"
+    [text]="textInput"
+    (textChange)="tester($event)"
+    height="60"
+    width="120"
+    backgroundColor="green"
+  ></TextField>
+  <Button
+    row="2"
+    text="Test"
+    (tap)="test()"
+    backgroundColor="orange"
+    height="60"
+    width="100"
+  ></Button>
 </GridLayout>
