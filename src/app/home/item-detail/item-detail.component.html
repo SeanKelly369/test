@@ -3,6 +3,8 @@
   <Label [text]="item.name"></Label>
 </ActionBar>
 
-<GridLayout>
-  <Label class="m-10 h3" verticalAlignment="top" [text]="item.description"></Label>
+<GridLayout rows="*,*,*">
+  <Label row="0" class="m-10 h3" verticalAlignment="top" [text]="item.description"></Label>
+  <TextField row="1" [text]="textInput" (textChange)="tester($event)" height="60" width="120" backgroundColor="green"></TextField>
+  <Button row="2" text="Test" (tap)="test()" backgroundColor="orange" height="60" width="100"></Button>
 </GridLayout>
